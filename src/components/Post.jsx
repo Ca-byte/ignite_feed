@@ -1,21 +1,21 @@
+import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 
 
-export function Post(props){
+export function Post(){
   return(
       <article className={styles.post}>
         <header>
           <div className={styles.author}>
-              <img 
-                className={styles.avatar}
-                src={props.UserImage}
-              />
-              <div className={styles.authorInfo}>
-                <strong>Caroline Vieira</strong>
-                <span>Web Developer</span>
-              </div>
+            <Avatar 
+              src="https://github.com/diego3g.png"
+            />
+            <div className={styles.authorInfo}>
+              <strong>Caroline Vieira</strong>
+              <span>Web Developer</span>
+            </div>
           </div>
           <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 1h ago</time>
         </header>
