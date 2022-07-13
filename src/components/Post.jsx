@@ -1,3 +1,4 @@
+import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 
@@ -12,11 +13,11 @@ export function Post(props){
                 src={props.UserImage}
               />
               <div className={styles.authorInfo}>
-                  <strong>Caroline Vieira</strong>
-                  <span>Web Developer</span>
+                <strong>Caroline Vieira</strong>
+                <span>Web Developer</span>
               </div>
           </div>
-          <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published há 1h</time>
+          <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 1h ago</time>
         </header>
         <div className={styles.content}>
           <p>Hello People 👋</p>
@@ -36,6 +37,11 @@ export function Post(props){
             <button type="submit">Post</button>
           </footer>
         </form>
+        <div className={styles.commentList}>
+          <Comment />
+          <Comment />
+          <Comment />
+        </div>
       </article>
   )
 }
