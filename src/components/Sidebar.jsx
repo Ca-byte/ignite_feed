@@ -15,7 +15,7 @@ export function Sidebar(){
               src="https://github.com/Ca-byte.png" 
             />
             <strong>Caroline Vieira</strong>
-            <span>Web Developer</span>
+            <span>Frontend Developer</span>
         </div>
 
         <footer>

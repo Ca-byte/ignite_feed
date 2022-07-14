@@ -4,6 +4,37 @@ import { Sidebar } from "./components/Sidebar";
 import "./global.css"
 import styles from "./App.module.css"
 
+
+const posts = [
+  {
+    id: 1,
+    author:{
+      avatarUrl: "https://github.com/Ca-byte.png",
+      name: "Caroline Vieira",
+      role: "Frontend Developer"
+    },
+    content:[
+      { type: 'paragraph', content: 'Hello People 👋'},
+      { type: 'paragraph', content: 'I just pushed a new project to my GitHub.Its a project that created during a Ignite Lab, Rocketseats event. Super cool is a Event platform 🚀'},
+      { type: 'link', content: 'Events Platform Ignite Lab'},
+    ],
+    publishedAt: new Date('2022-07-13 18:35:50'),
+  },
+  {
+    id: 2,
+    author:{
+      avatarUrl: "https://github.com/arthurmfgtab.png",
+      name: "Arthur Gonçalves",
+      role: "Frontend Developer"
+    },
+    content:[
+      { type: 'paragraph', content: 'Hello People 👋'},
+      { type: 'paragraph', content: 'I just pushed a new project to my GitHub. Its a project that created during a Ignite Lab, Rocketseats event. Super cool is a Event platform 🚀'},
+      { type: 'link', content: 'Events Platform Ignite Lab'},
+    ],
+    publishedAt: new Date('2022-07-14 18:35:50'),
+  },
+]
 export function App() {
   return (
     <>
@@ -11,10 +42,16 @@ export function App() {
     <div className={styles.wrapper}>
       <Sidebar />
       <main>
-        <Post 
-        UserImage="https://github.com/Ca-byte.png" />
-        <Post 
-        UserImage="https://images.unsplash.com/photo-1610989432929-9769f3cf8006?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"  />
+        { posts.map(post => {
+            return(
+            <Post 
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+              
+            />
+            )
+        })}
       </main>
 
     </div>

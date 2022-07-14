@@ -1,33 +1,43 @@
+import { format, formatDistanceToNow } from 'date-fns'
+import { LineSegment } from 'phosphor-react'
 import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
 
 
 
-export function Post(){
+export function Post({ author, content, publishedAt}){
+  const publishedDateFormatted = format(publishedAt, "LLLL d',' 'at' HH:mm")
+  const publishedDateRelativeNow = formatDistanceToNow(publishedAt, {
+    addSuffix: true,
+  })
+
   return(
       <article className={styles.post}>
         <header>
           <div className={styles.author}>
             <Avatar 
-              src="https://github.com/diego3g.png"
+              src={author.avatarUrl}
             />
             <div className={styles.authorInfo}>
-              <strong>Caroline Vieira</strong>
-              <span>Web Developer</span>
+              <strong>{author.name}</strong>
+              <span>{author.role}</span>
             </div>
           </div>
-          <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 1h ago</time>
+          <time title= {publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+            {publishedDateRelativeNow}
+          </time>
         </header>
         <div className={styles.content}>
-          <p>Hello People 👋</p>
-          <p>I just pushed a new project to my GitHub. It's a project that created during a Ignite Lab, Rocketseat's event. Super cool is a Event platform 🚀</p>
-          <p><a href='https://github.com/Ca-byte/event_platform_ignite_lab'>👉 {""} Events Platform Ignite Lab</a></p>
-          <p>
-            <a href=''>#newproject</a> {""}
-            <a href=''>#ignitelab</a> {""}
-            <a href=''>#rocketseat</a> {""}
-          </p>
+          {
+            content.map(item => {
+              if(item.type === 'paragraph'){
+                return <p>{item.content}</p>
+              } else if(item.type === 'link'){
+                return <p><a href='https://github.com/Ca-byte/event_platform_ignite_lab'>{item.content}</a></p>
+              }
+            })
+          }
         </div>
         <form className={styles.commentForm}>
           <textarea
