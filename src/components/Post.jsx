@@ -1,5 +1,6 @@
 import { format, formatDistanceToNow } from 'date-fns'
 import { LineSegment } from 'phosphor-react'
+import { useState } from 'react'
 import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
@@ -7,10 +8,36 @@ import styles from './Post.module.css'
 
 
 export function Post({ author, content, publishedAt}){
+const [comments, setComments ] = useState([
+  'Very good Carol, Congrats!! 👏👏'
+])
+
+const [newComment, setNewComment] = useState('')
+
+
   const publishedDateFormatted = format(publishedAt, "LLLL d',' 'at' HH:mm")
   const publishedDateRelativeNow = formatDistanceToNow(publishedAt, {
     addSuffix: true,
   })
+
+  function handleCreateNewComment(){
+    event.preventDefault();
+
+    setComments([...comments, newComment])
+    setNewComment('');
+  }
+
+  function handleNewComment(){
+    setNewComment(event.target.value);
+  }
+
+  function deleteComment(commentTodelete){
+    const commentsWithoutDeleteOne = comments.filter(comment =>{
+      return comment !== commentTodelete;
+    })
+    setComments(commentsWithoutDeleteOne)
+    
+  }
 
   return(
       <article className={styles.post}>
@@ -32,25 +59,35 @@ export function Post({ author, content, publishedAt}){
           {
             content.map(item => {
               if(item.type === 'paragraph'){
-                return <p>{item.content}</p>
+                return <p key={item.content}>{item.content}</p>
               } else if(item.type === 'link'){
-                return <p><a href='https://github.com/Ca-byte/event_platform_ignite_lab'>{item.content}</a></p>
+                return <p key={item.content}><a href='https://github.com/Ca-byte/event_platform_ignite_lab'>{item.content}</a></p>
               }
             })
           }
         </div>
-        <form className={styles.commentForm}>
+        <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <textarea
-          placeholder='Add a comment'
+          value={newComment}
+            onChange={handleNewComment}
+            placeholder='Add a comment'
           />
           <footer>
             <button type="submit">Post</button>
           </footer>
         </form>
         <div className={styles.commentList}>
-          <Comment />
-          <Comment />
-          <Comment />
+          {
+            comments.map(comment => {
+              return(
+                <Comment 
+                key={comment}
+                content={comment}
+                onDeleteComment={deleteComment}
+                />
+              )
+            })
+          }
         </div>
       </article>
   )
