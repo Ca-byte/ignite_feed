@@ -23,21 +23,29 @@ const [newComment, setNewComment] = useState('')
   function handleCreateNewComment(){
     event.preventDefault();
 
-    setComments([...comments, newComment])
+    setComments([...comments, newComment]);
     setNewComment('');
   }
 
   function handleNewComment(){
+    event.target.setCustomValidity('');
     setNewComment(event.target.value);
+  }
+
+  function handleNewCommentInvalid(){
+    event.target.setCustomValidity('Very polite comment required!');
+
   }
 
   function deleteComment(commentTodelete){
     const commentsWithoutDeleteOne = comments.filter(comment =>{
       return comment !== commentTodelete;
     })
-    setComments(commentsWithoutDeleteOne)
+    setComments(commentsWithoutDeleteOne);
     
   }
+
+  const isCommentEmpty = newComment.length === 0;
 
   return(
       <article className={styles.post}>
@@ -71,9 +79,11 @@ const [newComment, setNewComment] = useState('')
           value={newComment}
             onChange={handleNewComment}
             placeholder='Add a comment'
+            onInvalid={handleNewCommentInvalid}
+            required
           />
           <footer>
-            <button type="submit">Post</button>
+            <button type="submit" disabled={isCommentEmpty}>Post</button>
           </footer>
         </form>
         <div className={styles.commentList}>
