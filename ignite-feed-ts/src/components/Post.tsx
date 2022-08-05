@@ -14,6 +14,7 @@ interface Author {
 interface Content {
   type: 'paragraph' | 'link';
   content: string;
+  href: string;
 }
 
 interface PostProps {
@@ -84,7 +85,7 @@ const [newComment, setNewComment] = useState('')
               if(item.type === 'paragraph'){
                 return <p key={item.content}>{item.content}</p>
               } else if(item.type === 'link'){
-                return <p key={item.content}><a href='https://github.com/Ca-byte/event_platform_ignite_lab'>{item.content}</a></p>
+                return <p key={item.content}><a href={item.href}>{item.content}</a></p>
               }
             })
           }
