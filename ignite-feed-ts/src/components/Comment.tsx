@@ -33,7 +33,7 @@ function handleLikeComment(){
           <header>
             <div className={styles.authorAndTime}>
               <strong>Andrelino Silva</strong>
-              <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 1h ago</time>
+              <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 3min ago</time>
             </div>
               <button onClick={handleDeleteComment} title="Delete comment">
                 <Trash size={24}/>
