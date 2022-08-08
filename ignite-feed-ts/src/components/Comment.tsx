@@ -26,13 +26,13 @@ function handleLikeComment(){
 
   return(
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/andrelinos.png"/>
+      <Avatar hasBorder={false} src="https://github.com/diego3g.png"/>
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Andrelino Silva</strong>
+              <strong>Diego Fernandes</strong>
               <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 3min ago</time>
             </div>
               <button onClick={handleDeleteComment} title="Delete comment">

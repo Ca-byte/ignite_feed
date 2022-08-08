@@ -5,14 +5,14 @@ import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-interface Author {
+/* interface Author {
   name: string;
   role: string;
   avatarUrl: string;
 }
 
 interface Content {
-  type: 'paragraph' | 'link';
+  type: string;
   content: string;
   href: string;
 }
@@ -22,6 +22,25 @@ interface PostProps {
   content: Content[];
   publishedAt: Date;
 
+} */
+
+export interface Author {
+  avatarUrl: string;
+  name: string;
+  role: string;
+}
+
+export interface Content {
+  type: string;
+  content: string;
+  href?: string;
+}
+
+export interface PostProps {
+  id?: number;
+  author: Author;
+  content: Content[];
+  publishedAt: Date;
 }
 
 
@@ -29,6 +48,8 @@ export function Post({ author, content, publishedAt} : PostProps){
 const [comments, setComments ] = useState([''])
 
 const [newComment, setNewComment] = useState('')
+
+console.log(content)
 
 
   const publishedDateFormatted = format(publishedAt, "LLLL d',' 'at' HH:mm")

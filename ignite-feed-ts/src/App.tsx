@@ -4,6 +4,8 @@ import { Sidebar } from "./components/Sidebar";
 import "./global.css"
 import styles from "./App.module.css"
 
+import { Content } from './components/Post'
+
 
 const posts = [
   {
@@ -51,6 +53,9 @@ const posts = [
   },
   
 ]
+
+console.log(JSON.stringify(posts, null, 2))
+
 export function App() {
   return (
     <>
