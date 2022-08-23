@@ -5,25 +5,6 @@ import { Avatar } from './Avatar'
 import { Comment } from './Comment'
 import styles from './Post.module.css'
 
-/* interface Author {
-  name: string;
-  role: string;
-  avatarUrl: string;
-}
-
-interface Content {
-  type: string;
-  content: string;
-  href: string;
-}
-
-interface PostProps {
-  author: Author;
-  content: Content[];
-  publishedAt: Date;
-
-} */
-
 export interface Author {
   avatarUrl: string;
   name: string;
@@ -128,9 +109,9 @@ console.log(content)
             comments.map(comment => {
               return(
                 <Comment 
-                key={comment}
-                content={comment}
-                onDeleteComment={deleteComment}
+                  key={comment}
+                  content={comment}
+                  onDeleteComment={deleteComment}
                 />
               )
             })

@@ -19,21 +19,21 @@ function handleDeleteComment(){
 
 function handleLikeComment(){
   setLikeCount((state) => {
-    return state + 2
+    return state + 1
   });
 
 }
 
   return(
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/diego3g.png"/>
+      <Avatar hasBorder={false} src="https://github.com/Ca-byte.png"/>
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Diego Fernandes</strong>
-              <time title= "July 13 at 10:15am" dateTime='2022-07-13 10:15:50'>Published 3min ago</time>
+              <strong>Caroline Vieira</strong>
+              <time title= "August 23 at 10:15am" dateTime='2022-08-23 10:15:50'>Published 1min ago</time>
             </div>
               <button onClick={handleDeleteComment} title="Delete comment">
                 <Trash size={24}/>
