@@ -81,6 +81,9 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para ace
 
 
 ---
+## Deployment
+
+https://ignite-feed-ts-wheat.vercel.app/
 
 
 <br>
