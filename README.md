@@ -11,7 +11,7 @@
 
 <br>
 <p align="center">
-    <img alt="" src="./public/images/video.png" width="700px">
+    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/ignite-capa.png" width="700px">
 </p>
 <br>
 
