@@ -94,7 +94,7 @@ console.log(content)
         </div>
         <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <textarea
-          value={newComment}
+            value={newComment}
             onChange={handleNewComment}
             placeholder='Add a comment'
             onInvalid={handleNewCommentInvalid}

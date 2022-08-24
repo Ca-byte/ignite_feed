@@ -4,8 +4,6 @@ import { Sidebar } from "./components/Sidebar";
 import "./global.css"
 import styles from "./App.module.css"
 
-import { Content } from './components/Post'
-
 
 const posts = [
   {
