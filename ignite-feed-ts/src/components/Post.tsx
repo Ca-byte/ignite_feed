@@ -87,7 +87,7 @@ console.log(content)
               if(item.type === 'paragraph'){
                 return <p key={item.content}>{item.content}</p>
               } else if(item.type === 'link'){
-                return <p key={item.content}><a href={item.href}>{item.content}</a></p>
+                return <p key={item.content}><a target="_blank" href={item.href}>{item.content}</a></p>
               }
             })
           }
