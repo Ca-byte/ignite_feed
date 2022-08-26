@@ -105,18 +105,18 @@ console.log(content)
           </footer>
         </form>
         <div className={styles.commentList}>
-          {
-            comments.map(comment => {
-              return(
-                <Comment 
-                  key={comment}
-                  content={comment}
-                  onDeleteComment={deleteComment}
-                />
-              )
-            })
-          }
-        </div>
+          {comments.map((comment) => {
+              return (
+                comment.length > 0 && (
+                  <Comment
+                      key={comment}
+                      content={comment}
+                      onDeleteComment={deleteComment}
+                  />
+                )
+              );
+          })}
+            </div>
       </article>
   )
 }
