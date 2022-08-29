@@ -21,7 +21,7 @@ export interface CommentsProps {
   userName: string;
   avatarUrl: string;
   comment: string;
-  publishedAt: Date;
+  publishedAt: string;
 }
 export interface PostProps {
   id: number;
@@ -53,7 +53,7 @@ const [newComment, setNewComment] = useState('')
       userName: 'Caroline Vieira',
       avatarUrl: 'https://github.com/cabyte.png',
       comment: newComment,
-      publishedAt: new Date(),
+      publishedAt: '',
 
     };
 
