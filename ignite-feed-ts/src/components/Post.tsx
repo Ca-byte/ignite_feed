@@ -1,5 +1,4 @@
-import { format, formatDistanceToNow } from 'date-fns'
-import { LineSegment } from 'phosphor-react'
+import { format, formatDistanceToNow } from 'date-fns';
 import { useState, FormEvent, ChangeEvent, InvalidEvent } from 'react'
 import { Avatar } from './Avatar'
 import { Comment } from './Comment'
@@ -17,21 +16,29 @@ export interface Content {
   href?: string;
 }
 
+export interface CommentsProps {
+  id: number;
+  userName: string;
+  avatarUrl: string;
+  comment: string;
+  publishedAt: Date;
+}
 export interface PostProps {
-  id?: number;
+  id: number;
   author: Author;
   content: Content[];
   publishedAt: Date;
+  comments: CommentsProps[];
+}
+export interface CommentProps {
+  content: string;
+
 }
 
-
-export function Post({ author, content, publishedAt} : PostProps){
-const [comments, setComments ] = useState([''])
+export function Post({ author, content,comments, publishedAt} : PostProps){
+const [postComments, setPostComments ] = useState<CommentsProps[]>(comments);
 
 const [newComment, setNewComment] = useState('')
-
-console.log(content)
-
 
   const publishedDateFormatted = format(publishedAt, "LLLL d',' 'at' HH:mm")
   const publishedDateRelativeNow = formatDistanceToNow(publishedAt, {
@@ -41,7 +48,16 @@ console.log(content)
   function handleCreateNewComment(event: FormEvent){
     event.preventDefault();
 
-    setComments([...comments, newComment]);
+    const commentData = {
+      id: 969,
+      userName: 'Caroline Vieira',
+      avatarUrl: 'https://github.com/cabyte.png',
+      comment: newComment,
+      publishedAt: new Date(),
+
+    };
+
+    setPostComments([...postComments, commentData]);
     setNewComment('');
   }
 
@@ -55,11 +71,11 @@ console.log(content)
 
   }
 
-  function deleteComment(commentTodelete: string){
-    const commentsWithoutDeleteOne = comments.filter(comment =>{
-      return comment !== commentTodelete;
+  function deleteComment(commentTodelete: number){
+    const commentsWithoutDeleteOne = postComments.filter(comment =>{
+      return commentTodelete !== comment.id;
     })
-    setComments(commentsWithoutDeleteOne);
+    setPostComments(commentsWithoutDeleteOne);
     
   }
 
@@ -82,16 +98,21 @@ console.log(content)
           </time>
         </header>
         <div className={styles.content}>
-          {
-            content.map(item => {
-              if(item.type === 'paragraph'){
-                return <p key={item.content}>{item.content}</p>
-              } else if(item.type === 'link'){
-                return <p key={item.content}><a target="_blank" href={item.href}>{item.content}</a></p>
-              }
-            })
-          }
-        </div>
+          {content?.length > 0 &&
+            content.map((item) => {
+                if (item.type === 'paragraph') {
+                    return <p key={item.content}>{item.content}</p>;
+                } else if (item.type === 'link') {
+                    return (
+                      <p key={item.content}>
+                          <a target="_blank" href={item.href}>
+                              {item.content}
+                          </a>
+                      </p>
+                    );
+                }
+            })}
+            </div>
         <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
           <textarea
             value={newComment}
@@ -105,16 +126,14 @@ console.log(content)
           </footer>
         </form>
         <div className={styles.commentList}>
-          {comments.map((comment) => {
-              return (
-                comment.length > 0 && (
-                  <Comment
-                      key={comment}
-                      content={comment}
-                      onDeleteComment={deleteComment}
-                  />
-                )
-              );
+          {postComments?.map((comment) => {
+            return (
+                <Comment
+                  key={comment.id}
+                  comment={comment}
+                  onDeleteComment={() => deleteComment(comment.id)}
+                />
+            );
           })}
             </div>
       </article>

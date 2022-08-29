@@ -2,19 +2,20 @@ import { ThumbsUp, Trash } from 'phosphor-react'
 import { useState } from 'react'
 import { Avatar } from './Avatar'
 import styles from './Comment.module.css'
+import { CommentsProps } from './Post';
 
 
-interface CommentProps {
-  content: string;
-  onDeleteComment: (comment: string)=> void;
+export interface CommentProps {
+  comment: CommentsProps;
+    onDeleteComment: (id: number) => void;
 }
 
-export function Comment({ content, onDeleteComment } : CommentProps){
+export function Comment({ comment, onDeleteComment } : CommentProps){
 
   const [likeCount, setLikeCount] = useState(0)
 
-function handleDeleteComment(){
-  onDeleteComment(content)
+function handleDeleteComment(id: number){
+  onDeleteComment(id)
 }
 
 function handleLikeComment(){
@@ -26,20 +27,20 @@ function handleLikeComment(){
 
   return(
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/Ca-byte.png"/>
+      <Avatar hasBorder={false} src={comment.avatarUrl}/>
 
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Caroline Vieira</strong>
-              <time title= "August 23 at 10:15am" dateTime='2022-08-23 10:15:50'>Published 1min ago</time>
+              <strong>{comment.userName}</strong>
+              <time title={comment.publishedAt?.toString()} dateTime={comment.publishedAt?.toString()}>{comment.publishedAt?.toString()}</time>
             </div>
-              <button onClick={handleDeleteComment} title="Delete comment">
+              <button onClick={() => handleDeleteComment(comment.id)} title="Delete comment">
                 <Trash size={24}/>
               </button>
           </header>
-          <p>{content}</p>
+          <p>{comment.comment}</p>
         </div>
         <footer>
           <button onClick={handleLikeComment}>
