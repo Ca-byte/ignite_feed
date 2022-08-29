@@ -11,8 +11,10 @@
 
 <br>
 <p align="center">
-    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/ignite-capa.png" width="700px">
+    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-web.png" width="700px">
+    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-mobile.png" width="150px">
 </p>
+
 <br>
 
 ---
@@ -42,7 +44,7 @@ Antes de iniciar você precisa :checkered_flag:, ter instalado o [Git](https://g
 # Clone this project
 $ git clone 
 
-# Access
+# path
 $ cd ignite-feed-ts
 
 # Install dependencies
