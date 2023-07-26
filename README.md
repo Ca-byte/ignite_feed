@@ -1,6 +1,6 @@
 
 <div style="text-align: center;">
-    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-web.png" width="700px">
+    <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-web.png" width="600px">
     <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-mobile.png" width="150px">
 </div>
 
@@ -32,16 +32,24 @@ This project was developed using the following technologies:
 
 ## :memo: Project 
 
-In this Ignite Lab week, we learned advanced and highly performant technologies. A video content platform, to be more precise, the same platform we used to learn this content. Isn't that amazing? :star_struck:
-(https://event-platform-ignite-lab-kappa.vercel.app/) 
+**Ignite Feed**
 
+Ignite Feed is a social network-like project that allows users to create posts and receive comments and likes from their friends. Built with cutting-edge technologies, this project provides a seamless user experience and showcases the power of modern web development.:star_struck:
+
+Features:
+
+- Create and share posts with your network.
+- Receive comments and likes on your posts from friends.
+- Responsiveness ensures a seamless experience across various devices.
+- Personalize the user interface with custom color themes.
+  
 This is a project developed during React bootcamp **[Ignite](https://www.rocketseat.com.br/discover)**, run by **[@Rocketseat](https://github.com/Rocketseat)** 
 
 <br>
 
 ## :clipboard: Requirements
 
-Antes de iniciar você precisa :checkered_flag:, ter instalado o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/).
+Before starting you need :checkered_flag:, have installed the [Git](https://git-scm.com) and [Node](https://nodejs.org/en/).
 
 <br>
 
