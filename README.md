@@ -1,26 +1,25 @@
-<p align="center">
-    <img alt="" src="" width="700px">
-</p>
 
-
-<p align="center">
-  <a href="#rocket-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-</p>
-
-<br>
-<p align="center">
+<div style="text-align: center;">
     <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-web.png" width="700px">
     <img alt="" src="https://github.com/Ca-byte/ignite_feed/blob/main/ignite-feed-ts/public/Ignite-Feed-mobile.png" width="150px">
-</p>
+</div>
 
 <br>
 
 ---
-## 🚀 Tecnologias
+<div style="text-align: center;">
+  <a href="#memo-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#rocket-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#clipboard-requirements">Requirements</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#keyboard-how-to-run-the-project">How to run the project </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+    <a href="#art-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</div>
 
-Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+<br>
+
+## :rocket: Technologies ##
+
+This project was developed using the following technologies:
 
 - [React](https://pt-br.reactjs.org/)
 - [Vite](https://vitejs.dev/)
@@ -31,18 +30,27 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ---
 
-## 📋  Requisitos ##
+## :memo: Project 
+
+In this Ignite Lab week, we learned advanced and highly performant technologies. A video content platform, to be more precise, the same platform we used to learn this content. Isn't that amazing? :star_struck:
+(https://event-platform-ignite-lab-kappa.vercel.app/) 
+
+This is a project developed during React bootcamp **[Ignite](https://www.rocketseat.com.br/discover)**, run by **[@Rocketseat](https://github.com/Rocketseat)** 
+
+<br>
+
+## :clipboard: Requirements
 
 Antes de iniciar você precisa :checkered_flag:, ter instalado o [Git](https://git-scm.com) e [Node](https://nodejs.org/en/).
 
 <br>
 
 ---
-## ⌨ Como executar o projeto ##
+## :keyboard: How to run the project ##
 
 ```bash
 # Clone this project
-$ git clone 
+$ git clone git@github.com:Ca-byte/ignite_feed.git
 
 # path
 $ cd ignite-feed-ts
@@ -59,26 +67,16 @@ $ npm run dev
 
 ---
 
-## 💻 Projeto
 
-Nesse semana do ignite lab nós aprendemos tecnologias avançadas e altamente performaticas.
-Uma plataforma de conteúdos em vídeo, para ser mais exata a mesma plataforma que utilizamos para aprender esse conteúdo, incrível não é mesmo? :star_struck:
-(https://event-platform-ignite-lab-kappa.vercel.app/) 
 
-Este é um projeto desenvolvido Bootcamp **[Ignite](https://www.rocketseat.com.br/discover)**, realizada pela **[@Rocketseat](https://github.com/Rocketseat)** 
+## :art: Layout ##
 
-<br>
-
----
-
-## 🔖 Layout
-
-Você pode visualizar o layout do projeto através dos links abaixo:
-Eu fiz a minha versão de cores e de responsividade. Fique a vontade para duplicar e abusar da criatividade.
+You can visualize the project layout through the links below:
+I created my version of colors and responsiveness. Feel free to duplicate and unleash your creativity.
 
 - [Ignite Feed ts](https://www.figma.com/file/XnV9d4Nw9DhzphZNxEH9OD/Ignite-Feed-(Community)?node-id=0%3A1)
 
-Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
+Remembering that you need to have a [Figma](http://figma.com/) para acessá-lo.
 
 
 
@@ -88,5 +86,6 @@ Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para ace
 https://complete-ignite-feed.vercel.app/
 
 
-<br>
-<p align="center">Desenvolvido com 💜 por Caroline Vieira</p>
+<a href="#top">☝</a>
+
+<p style="text-align: center;">Developed with 💜 by Caroline Vieira</p>
